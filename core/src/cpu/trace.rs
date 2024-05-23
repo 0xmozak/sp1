@@ -170,7 +170,7 @@ impl CpuChip {
         Self::populate_branch(cols, event, &mut new_alu_events);
         self.populate_jump(cols, event, &mut new_alu_events);
         self.populate_auipc(cols, event, &mut new_alu_events);
-        let is_halt = self.populate_ecall(cols, event);
+        let is_halt = Self::populate_ecall(cols, event);
 
         if !event.instruction.is_branch_instruction()
             && !event.instruction.is_jump_instruction()
@@ -530,7 +530,7 @@ impl CpuChip {
     }
 
     /// Populate columns related to ECALL.
-    fn populate_ecall<F: PrimeField>(&self, cols: &mut CpuCols<F>, _: CpuEvent) -> bool {
+    fn populate_ecall<F: PrimeField>(cols: &mut CpuCols<F>, _: CpuEvent) -> bool {
         let mut is_halt = false;
 
         if cols.selectors.is_ecall == F::one() {
