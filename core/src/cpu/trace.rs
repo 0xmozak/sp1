@@ -167,7 +167,7 @@ impl CpuChip {
 
         // Populate memory, branch, jump, and auipc specific fields.
         self.populate_memory(cols, event, &mut new_alu_events, &mut new_blu_events);
-        self.populate_branch(cols, event, &mut new_alu_events);
+        Self::populate_branch(cols, event, &mut new_alu_events);
         self.populate_jump(cols, event, &mut new_alu_events);
         self.populate_auipc(cols, event, &mut new_alu_events);
         let is_halt = self.populate_ecall(cols, event);
@@ -353,7 +353,6 @@ impl CpuChip {
 
     /// Populates columns related to branching.
     fn populate_branch<F: PrimeField>(
-        &self,
         cols: &mut CpuCols<F>,
         event: CpuEvent,
         alu_events: &mut HashMap<Opcode, Vec<alu::AluEvent>>,
