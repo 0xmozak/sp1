@@ -6,13 +6,13 @@ use p3_field::{AbstractExtensionField, AbstractField, Field};
 
 /// A polynomial represented as a vector of coefficients.
 #[derive(Debug, Clone)]
+#[must_use]
 pub struct Polynomial<T> {
     coefficients: Vec<T>,
 }
 
 impl<T> Polynomial<T> {
     /// Create a new polynomial from a vector of coefficients.
-    #[must_use]
     pub fn new(coefficients: Vec<T>) -> Self {
         Self { coefficients }
     }
@@ -275,7 +275,6 @@ impl<T: Eq + AbstractField> PartialEq<Polynomial<T>> for Polynomial<T> {
 }
 
 impl Polynomial<u8> {
-    #[must_use]
     pub fn as_field<F: Field>(self) -> Polynomial<F> {
         Polynomial {
             coefficients: self

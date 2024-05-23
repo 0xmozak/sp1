@@ -10,6 +10,7 @@ const DEGREE: usize = 4;
 
 #[derive(AlignedBorrow, Clone, Copy, Debug, Default, PartialEq, Eq, Hash)]
 #[repr(C)]
+#[must_use]
 pub struct BinomialExtension<T>(pub [T; DEGREE]);
 
 impl<T> BinomialExtension<T> {

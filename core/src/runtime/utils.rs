@@ -21,7 +21,7 @@ macro_rules! assert_valid_memory_access {
                     assert!($addr > 40);
                 }
                 _ => {
-                    Register::from_u32($addr);
+                    let _ = Register::from_u32($addr);
                 }
             };
         }

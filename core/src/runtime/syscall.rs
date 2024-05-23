@@ -376,7 +376,7 @@ mod tests {
 
     #[test]
     fn test_encoding_roundtrip() {
-        for (syscall_code, _) in &default_syscall_map() {
+        for syscall_code in default_syscall_map().keys() {
             assert_eq!(SyscallCode::from_u32(*syscall_code as u32), *syscall_code);
         }
     }

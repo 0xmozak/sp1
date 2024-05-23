@@ -64,7 +64,7 @@ impl<F: PrimeField32> MachineAir<F> for CpuChip {
         }
 
         // Add the dependency events to the shard.
-        for (_, value) in &mut new_alu_events {
+        for value in &mut new_alu_events.values_mut() {
             value.sort_unstable_by_key(|event| event.clk);
         }
         new_blu_events.sort_unstable_by_key(|event| event.a1);
@@ -102,7 +102,7 @@ impl<F: PrimeField32> MachineAir<F> for CpuChip {
             .collect::<Vec<_>>();
 
         for (mut alu_events, mut blu_events) in events {
-            for (_, value) in &mut alu_events {
+            for value in &mut alu_events.values_mut() {
                 value.sort_unstable_by_key(|event| event.clk);
             }
             // Add the dependency events to the shard.
