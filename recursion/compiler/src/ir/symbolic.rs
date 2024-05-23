@@ -150,13 +150,13 @@ impl<N: Field> SymbolicVar<N> {
 impl<F: Field> SymbolicFelt<F> {
     pub(crate) fn digest(&self) -> Digest<F> {
         match self {
-            SymbolicFelt::Const(_, d) => *d,
-            SymbolicFelt::Val(_, d) => *d,
-            SymbolicFelt::Add(_, _, d) => *d,
-            SymbolicFelt::Mul(_, _, d) => *d,
-            SymbolicFelt::Sub(_, _, d) => *d,
-            SymbolicFelt::Div(_, _, d) => *d,
-            SymbolicFelt::Neg(_, d) => *d,
+            SymbolicFelt::Const(_, d)
+            | SymbolicFelt::Val(_, d)
+            | SymbolicFelt::Add(_, _, d)
+            | SymbolicFelt::Mul(_, _, d)
+            | SymbolicFelt::Sub(_, _, d)
+            | SymbolicFelt::Div(_, _, d)
+            | SymbolicFelt::Neg(_, d) => *d,
         }
     }
 }
@@ -164,14 +164,14 @@ impl<F: Field> SymbolicFelt<F> {
 impl<F: Field, EF: Field> SymbolicExt<F, EF> {
     pub(crate) fn digest(&self) -> Digest<EF> {
         match self {
-            SymbolicExt::Const(_, d) => *d,
-            SymbolicExt::Base(_, d) => *d,
-            SymbolicExt::Val(_, d) => *d,
-            SymbolicExt::Add(_, _, d) => *d,
-            SymbolicExt::Mul(_, _, d) => *d,
-            SymbolicExt::Sub(_, _, d) => *d,
-            SymbolicExt::Div(_, _, d) => *d,
-            SymbolicExt::Neg(_, d) => *d,
+            SymbolicExt::Const(_, d)
+            | SymbolicExt::Base(_, d)
+            | SymbolicExt::Val(_, d)
+            | SymbolicExt::Add(_, _, d)
+            | SymbolicExt::Mul(_, _, d)
+            | SymbolicExt::Sub(_, _, d)
+            | SymbolicExt::Div(_, _, d)
+            | SymbolicExt::Neg(_, d) => *d,
         }
     }
 }

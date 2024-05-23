@@ -209,7 +209,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::LoadFI(dst, src, index, offset, size) => Instruction::new(
                 Opcode::LOAD,
@@ -220,7 +220,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::StoreF(value, addr, index, offset, size) => Instruction::new(
                 Opcode::STORE,
@@ -231,7 +231,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::StoreFI(value, addr, index, offset, size) => Instruction::new(
                 Opcode::STORE,
@@ -242,7 +242,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
 
             AsmInstruction::AddF(dst, lhs, rhs) => Instruction::new(
@@ -254,7 +254,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::LessThan(dst, lhs, rhs) => Instruction::new(
                 Opcode::LessThanF,
@@ -265,7 +265,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::AddFI(dst, lhs, rhs) => Instruction::new(
                 Opcode::ADD,
@@ -276,7 +276,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubF(dst, lhs, rhs) => Instruction::new(
                 Opcode::SUB,
@@ -287,7 +287,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubFI(dst, lhs, rhs) => Instruction::new(
                 Opcode::SUB,
@@ -298,7 +298,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubFIN(dst, lhs, rhs) => Instruction::new(
                 Opcode::SUB,
@@ -309,7 +309,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 true,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::MulF(dst, lhs, rhs) => Instruction::new(
                 Opcode::MUL,
@@ -320,7 +320,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::MulFI(dst, lhs, rhs) => Instruction::new(
                 Opcode::MUL,
@@ -331,7 +331,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivF(dst, lhs, rhs) => Instruction::new(
                 Opcode::DIV,
@@ -342,7 +342,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivFI(dst, lhs, rhs) => Instruction::new(
                 Opcode::DIV,
@@ -353,7 +353,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivFIN(dst, lhs, rhs) => Instruction::new(
                 Opcode::DIV,
@@ -364,7 +364,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 true,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::LoadE(dst, src, index, offset, size) => Instruction::new(
                 Opcode::LOAD,
@@ -375,7 +375,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::LoadEI(dst, src, index, offset, size) => Instruction::new(
                 Opcode::LOAD,
@@ -386,7 +386,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::StoreE(value, addr, index, offset, size) => Instruction::new(
                 Opcode::STORE,
@@ -397,7 +397,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::StoreEI(value, addr, index, offset, size) => Instruction::new(
                 Opcode::STORE,
@@ -408,7 +408,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 size,
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::AddE(dst, lhs, rhs) => Instruction::new(
                 Opcode::EADD,
@@ -419,7 +419,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::AddEI(dst, lhs, rhs) => Instruction::new(
                 Opcode::EADD,
@@ -430,7 +430,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubE(dst, lhs, rhs) => Instruction::new(
                 Opcode::ESUB,
@@ -441,7 +441,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubEI(dst, lhs, rhs) => Instruction::new(
                 Opcode::ESUB,
@@ -452,7 +452,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::SubEIN(dst, lhs, rhs) => Instruction::new(
                 Opcode::ESUB,
@@ -463,7 +463,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 true,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::MulE(dst, lhs, rhs) => Instruction::new(
                 Opcode::EMUL,
@@ -474,7 +474,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::MulEI(dst, lhs, rhs) => Instruction::new(
                 Opcode::EMUL,
@@ -485,7 +485,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivE(dst, lhs, rhs) => Instruction::new(
                 Opcode::EDIV,
@@ -496,7 +496,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivEI(dst, lhs, rhs) => Instruction::new(
                 Opcode::EDIV,
@@ -507,7 +507,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::DivEIN(dst, lhs, rhs) => Instruction::new(
                 Opcode::EDIV,
@@ -518,7 +518,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 true,
                 false,
-                "".to_string(),
+                String::new(),
             ),
 
             AsmInstruction::Beq(label, lhs, rhs) => {
@@ -533,7 +533,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     false,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BeqI(label, lhs, rhs) => {
@@ -548,7 +548,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::Bne(label, lhs, rhs) => {
@@ -563,7 +563,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     false,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BneInc(label, lhs, rhs) => {
@@ -578,7 +578,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     false,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BneI(label, lhs, rhs) => {
@@ -593,7 +593,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BneIInc(label, lhs, rhs) => {
@@ -608,7 +608,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BneE(label, lhs, rhs) => {
@@ -623,7 +623,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     false,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BneEI(label, lhs, rhs) => {
@@ -638,7 +638,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BeqE(label, lhs, rhs) => {
@@ -653,7 +653,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     false,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::BeqEI(label, lhs, rhs) => {
@@ -668,7 +668,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::Jal(dst, label, offset) => {
@@ -683,7 +683,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                     F::zero(),
                     true,
                     true,
-                    "".to_string(),
+                    String::new(),
                 )
             }
             AsmInstruction::JalR(dst, label, offset) => Instruction::new(
@@ -695,7 +695,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Trap => Instruction::new(
                 Opcode::TRAP,
@@ -706,7 +706,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Halt => Instruction::new(
                 Opcode::HALT,
@@ -717,7 +717,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::HintBits(dst, src) => Instruction::new(
                 Opcode::HintBits,
@@ -728,7 +728,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Poseidon2Permute(dst, src) => Instruction::new(
                 Opcode::Poseidon2Compress,
@@ -739,7 +739,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::PrintF(dst) => Instruction::new(
                 Opcode::PrintF,
@@ -750,7 +750,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::PrintV(dst) => Instruction::new(
                 Opcode::PrintF,
@@ -761,7 +761,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::PrintE(dst) => Instruction::new(
                 Opcode::PrintE,
@@ -772,7 +772,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::CycleTracker(name) => Instruction::new(
                 Opcode::CycleTracker,
@@ -794,7 +794,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::HintLen(dst) => Instruction::new(
                 Opcode::HintLen,
@@ -805,7 +805,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Hint(dst) => Instruction::new(
                 Opcode::Hint,
@@ -816,7 +816,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::FriFold(m, ptr) => Instruction::new(
                 Opcode::FRIFold,
@@ -827,7 +827,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Poseidon2Compress(result, src1, src2) => Instruction::new(
                 Opcode::Poseidon2Compress,
@@ -838,7 +838,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 false,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::Commit(val, index) => Instruction::new(
                 Opcode::Commit,
@@ -849,7 +849,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
             AsmInstruction::RegisterPublicValue(val) => Instruction::new(
                 Opcode::RegisterPublicValue,
@@ -860,7 +860,7 @@ impl<F: PrimeField32, EF: ExtensionField<F>> AsmInstruction<F, EF> {
                 F::zero(),
                 false,
                 true,
-                "".to_string(),
+                String::new(),
             ),
         }
     }
