@@ -80,7 +80,7 @@ impl<T: Clone + Debug> PublicValues<Word<T>, T> {
     pub fn from_vec(data: Vec<T>) -> Self {
         let mut iter = data.iter().cloned();
 
-        let committed_value_digest = array::from_fn(|_| Word::from_iter(&mut iter));
+        let committed_value_digest = array::from_fn(|_| (&mut iter).collect::<Word<_>>());
 
         let deferred_proofs_digest = iter
             .by_ref()
@@ -91,24 +91,17 @@ impl<T: Clone + Debug> PublicValues<Word<T>, T> {
 
         // Collecting the remaining items into a tuple.  Note that it is only getting the first
         // four items, as the rest would be padded values.
-        let remaining_items = iter.collect_vec();
-        assert!(
-            remaining_items.len() >= 4,
-            "Invalid number of items in the serialized vector."
-        );
-
-        let [start_pc, next_pc, exit_code, shard] = match &remaining_items.as_slice()[0..4] {
-            [start_pc, next_pc, exit_code, shard] => [start_pc, next_pc, exit_code, shard],
-            _ => unreachable!(),
-        };
-
-        Self {
-            committed_value_digest,
-            deferred_proofs_digest,
-            start_pc: start_pc.to_owned(),
-            next_pc: next_pc.to_owned(),
-            exit_code: exit_code.to_owned(),
-            shard: shard.to_owned(),
+        if let Some((start_pc, next_pc, exit_code, shard)) = iter.next_tuple() {
+            Self {
+                committed_value_digest,
+                deferred_proofs_digest,
+                start_pc,
+                next_pc,
+                exit_code,
+                shard,
+            }
+        } else {
+            panic!("Invalid number of items in the serialized vector.");
         }
     }
 }
